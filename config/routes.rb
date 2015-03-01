@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'dogs#index'
 
-  resources :dogs, only: [:index]
+  resources :dogs
 
   get 'sign-up', to: 'registrations#new'
   post 'sign-up', to: 'registrations#create'

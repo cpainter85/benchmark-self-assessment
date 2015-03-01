@@ -9,3 +9,15 @@
     -else
       =link_to 'Sign Up', sign_up_path, class: 'btn btn-default'
       =link_to 'Sign In', sign_in_path, class: 'btn btn-primary'
+  .well
+    =link_to 'Add new dog', new_dog_path, class: 'btn btn-primary'
+  %table.table
+    %thead
+      %th Name
+      %th Breed
+    %tbody
+      -@dogs.each do |dog|
+        %td=link_to dog.name, dog_path(dog)
+        %td=dog.breed
+        %td=link_to 'Edit', edit_dog_path(dog), class: 'btn btn-primary'
+        %td=link_to 'Delete', dog_path(dog), method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'}
