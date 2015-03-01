@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  root 'dogs#index'
+
+  resources :dogs, only: [:index]
+
+  get 'sign-up', to: 'registrations#new'
+  post 'sign-up', to: 'registrations#create'
+  get 'sign-out', to: 'authentication#destroy'
+  get 'sign-in', to: 'authentication#new'
+  post 'sign-in', to: 'authentication#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

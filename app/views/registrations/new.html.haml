@@ -1,0 +1,16 @@
+.container
+  .page-header
+    %h1 Sign Up Page
+  .form-horizontal
+    =form_for @user, url: sign_up_path do |f|
+      .form-group
+        =f.label :email
+        =f.email_field :email
+      .form-group
+        =f.label :password
+        =f.password_field :password
+      .form-group
+        =f.label :password_confirmation
+        =f.password_field :password_confirmation
+      .form-group
+        =f.submit class: 'btn btn-primary'
